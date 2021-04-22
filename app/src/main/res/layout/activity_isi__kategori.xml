@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".Kategori.Isi_Kategori">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_menu"
+        android:background="#126AEF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:fontFamily="@font/fredoka_one"
+                android:text="Solaria "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/bg_produk"
+                android:gravity="left|center_vertical"
+                android:textAllCaps="false"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:id="@+id/btncari"
+                android:hint="Cari Disini.."
+                android:imeOptions="actionDone"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textColor="@color/black" />
+            <RelativeLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+
+
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/toolbar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <!-- Card Menu Makanan   -->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_isi_kategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="15"
+                tools:listitem="@layout/item_row_isi_kategori" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnKeranjang"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Keranjang"
+        android:fontFamily="@font/andika"
+        android:background="@drawable/bg_tambah"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>

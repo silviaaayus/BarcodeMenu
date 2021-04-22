@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Menu.Menu">
+<!--    navbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:background="#126AEF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/fredoka_one"
+               android:text="Solaria "
+               android:layout_weight="0.5"
+               android:textColor="@color/white"
+               android:textSize="@dimen/_18sdp"
+               android:textStyle="bold" />
+
+           <ImageView
+               android:id="@+id/imgRiwayat"
+               style="bold"
+               android:clickable="true"
+               android:layout_width="280dp"
+               android:layout_height="match_parent"
+               android:layout_weight="1.5"
+               android:src="@drawable/ic_baseline_history"
+               app:tint="@color/white" />
+
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+<!--NOMEJA-->
+   <LinearLayout
+        android:background="@drawable/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp">
+
+       <TextView
+           android:id="@+id/txtNoMeja"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="@dimen/_10sdp"
+           android:layout_marginTop="@dimen/_5sdp"
+           android:fontFamily="@font/andika"
+           android:gravity="center_horizontal"
+           android:text="No Meja : 12"
+           android:textColor="@color/white"
+           android:textSize="@dimen/_20sdp"
+           android:textStyle="bold" />
+    </LinearLayout>
+    <!--Recomended-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130sdp"
+        android:background="@drawable/splash"
+        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/_3sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:fontFamily="@font/andika"
+                android:text="Recomended"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_row_menu"
+                    tools:itemCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:id="@+id/recylerRekomended"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+<!--    Menu Makanan-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/andika"
+                android:text="Makanan"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <!-- Card Menu Makanan   -->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_row_menu"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:id="@+id/recycler_makanan"/>
+            </LinearLayout>
+<!--Menu Minuman-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/andika"
+                    android:text="Minuman"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <!-- Card Menu Minuman   -->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_row_menu"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:id="@+id/recycler_minuman"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
